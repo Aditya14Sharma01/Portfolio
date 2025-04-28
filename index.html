@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio website of a tech enthusiast and developer." />
+  <meta name="author" content="Your Name" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <title>My Portfolio</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --text-color: #f8fafc;
+      --accent-color: #38bdf8;
+      --card-bg: #1e293b;
+    }
+
+    [data-theme="light"] {
+      --bg-color: #f1f5f9;
+      --text-color: #0f172a;
+      --accent-color: #2563eb;
+      --card-bg: #e2e8f0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    body {
+      background: var(--bg-color);
+      color: var(--text-color);
+      padding: 20px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    nav button {
+      background: var(--card-bg);
+      border: none;
+      padding: 10px 20px;
+      color: var(--text-color);
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    nav button:hover {
+      background: var(--accent-color);
+      transform: scale(1.05);
+    }
+
+    #themeToggle {
+      margin-left: auto;
+      background: var(--accent-color);
+      color: white;
+    }
+
+    .section {
+      display: none;
+      animation: fade 0.5s ease-in-out;
+    }
+
+    .active {
+      display: block;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .project {
+      background: var(--card-bg);
+      padding: 15px;
+      margin: 10px;
+      border-radius: 10px;
+      flex: 1 1 300px;
+      transition: transform 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
+    .project h3 {
+      margin-bottom: 5px;
+      color: var(--accent-color);
+    }
+
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .skills-list, .contact-info {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .skills-list li, .contact-info li {
+      background: var(--card-bg);
+      padding: 8px;
+      margin-bottom: 5px;
+      border-radius: 6px;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('about')">About</button>
+    <button onclick="showSection('projects')">Projects</button>
+    <button onclick="showSection('skills')">Skills</button>
+    <button onclick="showSection('contact')">Contact</button>
+    <button id="themeToggle" onclick="toggleTheme()">Toggle Theme</button>
+  </nav>
+
+  <section id="home" class="section active">
+    <h1>Welcome to My Portfolio</h1>
+    <p>Discover my work, skills, and journey in the tech world.</p>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I am a passionate developer with a strong interest in technology and innovation. I love building solutions that solve real-world problems.</p>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project">
+        <h3>Smart Car Controller</h3>
+        <p>A Wi-Fi-controlled robotic car using ESP32-CAM, with live camera feed and smartphone compatibility.</p>
+      </div>
+      <div class="project">
+        <h3>TeknoBot</h3>
+        <p>Autonomous line-following and obstacle-avoiding robot built using Arduino Nano and sensors.</p>
+      </div>
+      <div class="project">
+        <h3>Maze Solver</h3>
+        <p>PID-based intelligent robot for solving complex mazes using sensor array and IR obstacle detection.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Arduino & ESP32 Programming</li>
+      <li>Embedded Systems</li>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Python</li>
+      <li>Robotics and IoT</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <ul class="contact-info">
+      <li>Email: yourname@example.com</li>
+      <li>Phone: +1234567890</li>
+      <li>GitHub: github.com/yourusername</li>
+    </ul>
+  </section>
+
+  <footer>
+    &copy; 2025 Your Name. All rights reserved.
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      document.documentElement.setAttribute('data-theme', currentTheme === 'light' ? 'dark' : 'light');
+    }
+  </script>
+</body>
+</html>
