@@ -19,6 +19,95 @@
   font-family: 'Segoe UI', sans-serif;
   transition: background 0.3s, color 0.3s;
 }
+/* ---------- Home Section Layout ---------- */
+.home-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#home h1 {
+  font-size: 2.75rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.highlight {
+  color: var(--accent-color);
+}
+
+.intro {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  color: var(--text-color);
+}
+
+/* ---------- Individual Section Blocks ---------- */
+.home-section {
+  margin-bottom: 50px;
+}
+
+.home-section h2 {
+  font-size: 1.6rem;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.home-section h2::before {
+  font-size: 1.4rem;
+}
+
+/* Emojis per section */
+.home-section:nth-of-type(1) h2::before { content: "🚀"; }
+.home-section:nth-of-type(2) h2::before { content: "💻"; }
+.home-section:nth-of-type(3) h2::before { content: "🤖"; }
+.home-section:nth-of-type(4) h2::before { content: "🛠️"; }
+.home-section:nth-of-type(5) h2::before { content: "🌱"; }
+.home-section:nth-of-type(6) h2::before { content: "📈"; }
+.home-section:nth-of-type(7) h2::before { content: "🤝"; }
+
+.home-section p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+/* ---------- Tool List Styling ---------- */
+.tool-list {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.tool-list li {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: var(--text-color);
+}
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 768px) {
+  #home h1 {
+    font-size: 2rem;
+  }
+
+  .home-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .intro, .home-section p, .tool-list li {
+    font-size: 0.95rem;
+  }
+
+  .home-container {
+    padding: 10px;
+  }
+}
 
 body {
   background: var(--bg-color);
