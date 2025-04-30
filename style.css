@@ -119,3 +119,37 @@ footer {
     gap: 10px;
   }
 }
+
+.highlight {
+  color: var(--accent-color);
+}
+
+.intro {
+  margin-top: 10px;
+  max-width: 800px;
+  line-height: 1.8;
+}
+
+.home-section {
+  margin-top: 30px;
+  max-width: 800px;
+}
+
+.home-section h2 {
+  margin-bottom: 10px;
+  color: var(--accent-color);
+}
+
+.home-section p {
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.tool-list {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.tool-list li {
+  margin-bottom: 6px;
+}
