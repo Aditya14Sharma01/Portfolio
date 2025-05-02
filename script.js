@@ -26,3 +26,10 @@ function toggleMenu() {
   links.classList.toggle("active");
   backdrop.classList.toggle("active");
 }
+document.querySelector(".menu-toggle").addEventListener("click", () => {
+  document.querySelector(".nav-links").classList.toggle("active");
+  document.querySelector(".nav-backdrop").classList.toggle("active");
+});
+
+// 3D Robot Welcome Animation
+// (Removed as per user request)
