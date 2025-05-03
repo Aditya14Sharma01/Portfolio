@@ -10,26 +10,25 @@
   <title>Aditya Sharma | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div id="robot-3d-container" style="position:fixed; bottom:20px; left:20px; width:300px; height:300px; z-index:2000; pointer-events:none;"></div>
   <header class="navbar">
     <div class="nav-container">
       <div class="logo">Aditya Sharma</div>
-      <div class="menu-toggle" id="menuToggle">&#9776;</div>
-      <div class="nav-backdrop" id="navBackdrop"></div>
-      <nav class="nav-links" id="navLinks">
-        <a href="#" id="home-link">Home</a>
+      <div class="nav-links" id="navLinks">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-        <button id="themeToggle" class="theme-toggle">
-          <i class="fas fa-moon"></i>
-        </button>
-      </nav>
+        <a href="#contact" class="contact-button">Contact Me Now</a>
+      </div>
+      <button id="menuToggle" class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
     </div>
   </header>
+  <div id="navBackdrop" class="nav-backdrop"></div>
 
   <section class="hero-video">
     <video autoplay muted loop playsinline class="bg-video">
@@ -46,236 +45,202 @@
     </div>
   </section>
 
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <div class="about-container">
-      <div class="about-image">
-        <img src="images/profile.jpg" alt="Aditya Sharma" class="profile-photo">
-        <div class="social-links-about">
-          <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+  <section id="about" class="section parallax" style="background-image: url('images/about-bg.jpg');">
+    <div class="parallax-content">
+      <h2>About Me</h2>
+      <div class="about-container">
+        <div class="about-image">
+          <img src="myphoto.jpg" alt="Aditya Sharma" class="profile-photo">
+          <div class="social-links-about">
+            <a href="https://github.com/Aditya14Sharma01" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/aditya1401sharma/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/hack.erx14" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@TeknoRobotics2" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
         </div>
-      </div>
-      <div class="about-content">
-        <h3>Who Am I?</h3>
-        <p>I am a passionate developer and robotics enthusiast with a strong foundation in embedded systems and IoT. My journey in technology began with a curiosity about how things work, which evolved into building innovative solutions that solve real-world problems.</p>
-        
-        <h3>My Journey</h3>
-        <p>Starting from tinkering with basic electronics to developing complex robotics systems, I've always been fascinated by the intersection of hardware and software. My experience spans across various domains including:</p>
-        <ul class="journey-list">
-          <li>Robotics and Automation</li>
-          <li>Internet of Things (IoT)</li>
-          <li>Embedded Systems Development</li>
-          <li>Web Development</li>
-          <li>Hardware Prototyping</li>
-        </ul>
+        <div class="about-content">
+          <h3>Who Am I?</h3>
+          <p>I am a passionate developer and robotics enthusiast with a strong foundation in embedded systems and IoT. My journey in technology began with a curiosity about how things work, which evolved into building innovative solutions that solve real-world problems.</p>
+          
+          <h3>My Journey</h3>
+          <p>Starting from tinkering with basic electronics to developing complex robotics systems, I've always been fascinated by the intersection of hardware and software. My experience spans across various domains including:</p>
+          <ul class="journey-list">
+            <li>Robotics and Automation</li>
+            <li>Internet of Things (IoT)</li>
+            <li>Embedded Systems Development</li>
+            <li>Web Development</li>
+            <li>Hardware Prototyping</li>
+          </ul>
 
-        <h3>What Drives Me</h3>
-        <p>I believe in creating technology that makes a difference. Whether it's building robots that can assist in daily tasks or developing IoT solutions that improve efficiency, I'm always looking for ways to push the boundaries of what's possible.</p>
-
-        <h3>Current Focus</h3>
-        <p>Currently, I'm focused on advancing my skills in AI and machine learning applications for robotics, while also exploring new frontiers in IoT and smart home automation.</p>
+          <h3>What Drives Me</h3>
+          <p>I believe in creating technology that makes a difference. Whether it's building robots that can assist in daily tasks or developing IoT solutions that improve efficiency, I'm always looking for ways to push the boundaries of what's possible.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="projects" class="section">
-    <h2>Featured Projects</h2>
-    <div class="projects-grid">
-      <div class="project">
-        <div class="project-image">
-          <img src="images/smart-car.jpg" alt="Smart Car Controller" loading="lazy">
+  <section id="projects" class="section parallax" style="background-image: url('images/projects-bg.jpg');">
+    <div class="parallax-content">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project">
+          <div class="project-image">
+            <img src="images-project/smart-car.jpg" alt="Smart Car Controller" loading="lazy">
+          </div>
+          <h3>Smart Car Controller</h3>
+          <p>A Wi-Fi-controlled robotic car using ESP32-CAM, with live camera feed and smartphone compatibility. Features real-time video streaming and obstacle detection.</p>
+          <div class="project-tech">
+            <span class="tech-tag">ESP32</span>
+            <span class="tech-tag">IoT</span>
+            <span class="tech-tag">Python</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">View Project →</a>
+            <a href="https://github.com/Aditya14Sharma01/BluetoothCAR" class="project-link" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+          </div>
         </div>
-        <h3>Smart Car Controller</h3>
-        <p>A Wi-Fi-controlled robotic car using ESP32-CAM, with live camera feed and smartphone compatibility. Features real-time video streaming and obstacle detection.</p>
-        <div class="project-tech">
-          <span class="tech-tag">ESP32</span>
-          <span class="tech-tag">IoT</span>
-          <span class="tech-tag">Python</span>
+        <div class="project">
+          <div class="project-image">
+            <img src="images-project/maze-solver.jpg" alt="Maze Solver" loading="lazy">
+          </div>
+          <h3>Maze Solver</h3>
+          <p>PID-based intelligent robot for solving complex mazes using sensor array and IR obstacle detection. Achieves optimal path finding in dynamic environments.</p>
+          <div class="project-tech">
+            <span class="tech-tag">PID Control</span>
+            <span class="tech-tag">Arduino</span>
+            <span class="tech-tag">Algorithms</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">View Project →</a>
+            <a href="https://github.com/Aditya14Sharma01/Maze-Solver" class="project-link" target="_blank"><i class="fab fa-github"></i> Source Code</a>
+          </div>
         </div>
-        <div class="project-links">
+        <div class="project">
+          <div class="project-image">
+            <img src="images-project/gesture-robot.jpg" alt="Gesture Controlled Robot" loading="lazy">
+          </div>
+          <h3>Gesture Controlled Robot</h3>
+          <p>Robot controlled through hand gestures using accelerometer and gyroscope sensors, with wireless communication and real-time response.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Arduino</span>
+            <span class="tech-tag">Sensors</span>
+            <span class="tech-tag">Wireless</span>
+          </div>
           <a href="#" class="project-link">View Project →</a>
-          <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+          <a href="https://github.com/Aditya14Sharma01/Gesture-Controlled" class="project-link" target="_blank"><i class="fab fa-github"></i> Source Code</a>
         </div>
-      </div>
-      <div class="project">
-        <div class="project-image">
-          <img src="images/teknobot.jpg" alt="TeknoBot" loading="lazy">
-        </div>
-        <h3>TeknoBot</h3>
-        <p>Autonomous line-following and obstacle-avoiding robot built using Arduino Nano and sensors. Implements advanced path planning algorithms.</p>
-        <div class="project-tech">
-          <span class="tech-tag">Arduino</span>
-          <span class="tech-tag">C++</span>
-          <span class="tech-tag">Sensors</span>
-        </div>
-        <div class="project-links">
+        <div class="project">
+          <div class="project-image">
+            <img src="images-project/weather-station.jpg" alt="Weather Station" loading="lazy">
+          </div>
+          <h3>Weather Station</h3>
+          <p>IoT-based weather monitoring system with temperature, humidity, and pressure sensors, featuring a web dashboard for real-time data visualization.</p>
+          <div class="project-tech">
+            <span class="tech-tag">ESP32</span>
+            <span class="tech-tag">Web</span>
+            <span class="tech-tag">Sensors</span>
+          </div>
           <a href="#" class="project-link">View Project →</a>
-          <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
+          <a href="https://github.com/Aditya14Sharma01/Weather-Station" class="project-link" target="_blank"><i class="fab fa-github"></i> Source Code</a>
         </div>
-      </div>
-      <div class="project">
-        <div class="project-image">
-          <img src="images/maze-solver.jpg" alt="Maze Solver" loading="lazy">
-        </div>
-        <h3>Maze Solver</h3>
-        <p>PID-based intelligent robot for solving complex mazes using sensor array and IR obstacle detection. Achieves optimal path finding in dynamic environments.</p>
-        <div class="project-tech">
-          <span class="tech-tag">PID Control</span>
-          <span class="tech-tag">Arduino</span>
-          <span class="tech-tag">Algorithms</span>
-        </div>
-        <div class="project-links">
-          <a href="#" class="project-link">View Project →</a>
-          <a href="#" class="project-link"><i class="fab fa-github"></i> Source Code</a>
-        </div>
-      </div>
-      <div class="project">
-        <h3>Home Automation System</h3>
-        <p>Smart home system using ESP32 and MQTT protocol for controlling appliances, monitoring sensors, and implementing security features.</p>
-        <div class="project-tech">
-          <span class="tech-tag">ESP32</span>
-          <span class="tech-tag">MQTT</span>
-          <span class="tech-tag">IoT</span>
-        </div>
-        <a href="#" class="project-link">View Project →</a>
-      </div>
-      <div class="project">
-        <h3>Gesture Controlled Robot</h3>
-        <p>Robot controlled through hand gestures using accelerometer and gyroscope sensors, with wireless communication and real-time response.</p>
-        <div class="project-tech">
-          <span class="tech-tag">Arduino</span>
-          <span class="tech-tag">Sensors</span>
-          <span class="tech-tag">Wireless</span>
-        </div>
-        <a href="#" class="project-link">View Project →</a>
-      </div>
-      <div class="project">
-        <h3>Weather Station</h3>
-        <p>IoT-based weather monitoring system with temperature, humidity, and pressure sensors, featuring a web dashboard for real-time data visualization.</p>
-        <div class="project-tech">
-          <span class="tech-tag">ESP32</span>
-          <span class="tech-tag">Web</span>
-          <span class="tech-tag">Sensors</span>
-        </div>
-        <a href="#" class="project-link">View Project →</a>
-      </div>
-      <div class="project">
-        <h3>Smart Irrigation System</h3>
-        <p>Automated plant watering system with soil moisture sensors and weather prediction integration for optimal water usage.</p>
-        <div class="project-tech">
-          <span class="tech-tag">Arduino</span>
-          <span class="tech-tag">Sensors</span>
-          <span class="tech-tag">Automation</span>
-        </div>
-        <a href="#" class="project-link">View Project →</a>
-      </div>
-      <div class="project">
-        <h3>Voice Controlled Robot</h3>
-        <p>Robot that responds to voice commands using speech recognition and natural language processing, with obstacle avoidance capabilities.</p>
-        <div class="project-tech">
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">NLP</span>
-          <span class="tech-tag">Arduino</span>
-        </div>
-        <a href="#" class="project-link">View Project →</a>
       </div>
     </div>
   </section>
 
-  <section id="skills" class="section">
-    <h2>Technical Skills</h2>
-    <div class="skills-container">
-      <div class="skill-category">
-        <h3>Hardware & Embedded</h3>
-        <ul class="skills-list">
-          <li><i class="fas fa-microchip"></i> Arduino & ESP32 Programming</li>
-          <li><i class="fas fa-cogs"></i> Embedded Systems</li>
-          <li><i class="fas fa-project-diagram"></i> Circuit Design</li>
-          <li><i class="fas fa-puzzle-piece"></i> PCB Design</li>
-          <li><i class="fas fa-robot"></i> Robotics</li>
-          <li><i class="fas fa-bolt"></i> Power Electronics</li>
-          <li><i class="fas fa-microchip"></i> Microcontroller Programming</li>
-          <li><i class="fas fa-satellite-dish"></i> Wireless Communication</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h3>Software Development</h3>
-        <ul class="skills-list">
-          <li><i class="fab fa-html5"></i> HTML, CSS, JavaScript</li>
-          <li><i class="fab fa-python"></i> Python</li>
-          <li><i class="fas fa-code"></i> C/C++</li>
-          <li><i class="fas fa-network-wired"></i> IoT Development</li>
-          <li><i class="fab fa-git-alt"></i> Version Control (Git)</li>
-          <li><i class="fas fa-database"></i> Database Management</li>
-          <li><i class="fas fa-mobile-alt"></i> Mobile App Development</li>
-          <li><i class="fas fa-server"></i> Backend Development</li>
-        </ul>
-      </div>
-      <div class="skill-category">
-        <h3>Tools & Technologies</h3>
-        <ul class="skills-list">
-          <li><i class="fas fa-cube"></i> 3D Modeling & Printing</li>
-          <li><i class="fas fa-tools"></i> CAD Software</li>
-          <li><i class="fas fa-chart-line"></i> Data Analysis</li>
-          <li><i class="fas fa-shield-alt"></i> Cybersecurity</li>
-          <li><i class="fas fa-cloud"></i> Cloud Computing</li>
-          <li><i class="fas fa-brain"></i> Machine Learning</li>
-          <li><i class="fas fa-project-diagram"></i> System Architecture</li>
-          <li><i class="fas fa-tasks"></i> Project Management</li>
-        </ul>
+  <section id="skills" class="section parallax" style="background-image: url('images/skills-bg.jpg');">
+    <div class="parallax-content">
+      <h2>Technical Skills</h2>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3>Hardware & Embedded</h3>
+          <ul class="skills-list">
+            <li><i class="fas fa-microchip"></i> Arduino & ESP32 Programming</li>
+            <li><i class="fas fa-cogs"></i> Embedded Systems</li>
+            <li><i class="fas fa-project-diagram"></i> Circuit Design</li>
+            <li><i class="fas fa-puzzle-piece"></i> PCB Design</li>
+            <li><i class="fas fa-robot"></i> Robotics</li>
+            <li><i class="fas fa-bolt"></i> Power Electronics</li>
+            <li><i class="fas fa-microchip"></i> Microcontroller Programming</li>
+            <li><i class="fas fa-satellite-dish"></i> Wireless Communication</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Software Development</h3>
+          <ul class="skills-list">
+            <li><i class="fab fa-html5"></i> HTML, CSS, JavaScript</li>
+            <li><i class="fab fa-python"></i> Python</li>
+            <li><i class="fas fa-code"></i> C/C++</li>
+            <li><i class="fas fa-network-wired"></i> IoT Development</li>
+            <li><i class="fab fa-git-alt"></i> Version Control (Git)</li>
+            <li><i class="fas fa-database"></i> Database Management</li>
+            <li><i class="fas fa-mobile-alt"></i> Mobile App Development</li>
+            <li><i class="fas fa-server"></i> Backend Development</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3>Tools & Technologies</h3>
+          <ul class="skills-list">
+            <li><i class="fas fa-cube"></i> 3D Modeling & Printing</li>
+            <li><i class="fas fa-tools"></i> CAD Software</li>
+            <li><i class="fas fa-chart-line"></i> Data Analysis</li>
+            <li><i class="fas fa-shield-alt"></i> Cybersecurity</li>
+            <li><i class="fas fa-cloud"></i> Cloud Computing</li>
+            <li><i class="fas fa-brain"></i> Machine Learning</li>
+            <li><i class="fas fa-project-diagram"></i> System Architecture</li>
+            <li><i class="fas fa-tasks"></i> Project Management</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section">
-    <h2>Get In Touch</h2>
-    <div class="contact-container">
-      <div class="contact-info">
-        <div class="contact-item">
-          <i class="fas fa-envelope"></i>
-          <a href="mailto:aditya1401sharma@gmail.com">aditya1401sharma@gmail.com</a>
+  <section id="contact" class="section parallax" style="background-image: url('images/contact-bg.jpg');">
+    <div class="parallax-content">
+      <h2>Get In Touch</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:aditya1401sharma@gmail.com">aditya1401sharma@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+919267927627">+91 9267927627</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Delhi, India</span>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/Aditya14Sharma01" target="_blank">github.com/Aditya14Sharma01</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/aditya1401sharma/" target="_blank">linkedin.com/in/aditya1401sharma</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-instagram"></i>
+            <a href="https://www.instagram.com/hack.erx14" target="_blank">instagram.com/hack.erx14</a>
+          </div>
+          <div class="contact-item">
+            <i class="fab fa-youtube"></i>
+            <a href="https://www.youtube.com/@TeknoRobotics2" target="_blank">youtube.com/@TeknoRobotics2</a>
+          </div>
         </div>
-        <div class="contact-item">
-          <i class="fas fa-phone"></i>
-          <a href="tel:+919267927627">+91 9267927627</a>
-        </div>
-        <div class="contact-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>Delhi, India</span>
-        </div>
-        <div class="contact-item">
-          <i class="fab fa-github"></i>
-          <a href="https://github.com/Aditya14Sharma01" target="_blank">github.com/Aditya14Sharma01</a>
-        </div>
-        <div class="contact-item">
-          <i class="fab fa-linkedin"></i>
-          <a href="https://www.linkedin.com/in/aditya1401sharma/" target="_blank">linkedin.com/in/aditya1401sharma</a>
-        </div>
-        <div class="contact-item">
-          <i class="fab fa-instagram"></i>
-          <a href="https://www.instagram.com/hack.erx14" target="_blank">instagram.com/hack.erx14</a>
-        </div>
-        <div class="contact-item">
-          <i class="fab fa-youtube"></i>
-          <a href="https://www.youtube.com/@TeknoRobotics2" target="_blank">youtube.com/@TeknoRobotics2</a>
-        </div>
+        <form class="contact-form" onsubmit="sendEmail(event)">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="submit-button">Send Message</button>
+        </form>
       </div>
-      <form class="contact-form">
-        <div class="form-group">
-          <input type="text" id="name" name="name" placeholder="Your Name" required>
-        </div>
-        <div class="form-group">
-          <input type="email" id="email" name="email" placeholder="Your Email" required>
-        </div>
-        <div class="form-group">
-          <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-        </div>
-        <button type="submit" class="submit-button">Send Message</button>
-      </form>
     </div>
   </section>
 
@@ -331,173 +296,6 @@
     </div>
   </footer>
 
-  <script>
-    // Theme toggle functionality
-    const themeToggle = document.getElementById('themeToggle');
-    const icon = themeToggle.querySelector('i');
-    
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-theme');
-      if (document.body.classList.contains('dark-theme')) {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
-      } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
-      }
-    });
-
-    // Enhanced JavaScript functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      // Smooth scrolling with offset for fixed navbar
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const href = this.getAttribute('href');
-          if (href === '#') {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            return;
-          }
-          const target = document.querySelector(href);
-          if (target) {
-            const headerOffset = 80;
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-            window.scrollTo({
-              top: offsetPosition,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-
-      // Intersection Observer for fade-in animations
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-
-      document.querySelectorAll('.section, .project, .skill-category').forEach(el => {
-        observer.observe(el);
-      });
-
-      // Mobile menu functionality
-      const menuToggle = document.getElementById('menuToggle');
-      const navLinks = document.getElementById('navLinks');
-      const navBackdrop = document.getElementById('navBackdrop');
-
-      function toggleMenu() {
-        navLinks.classList.toggle('active');
-        navBackdrop.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-      }
-
-      menuToggle.addEventListener('click', toggleMenu);
-      navBackdrop.addEventListener('click', toggleMenu);
-
-      // Close mobile menu when clicking on a nav link
-      document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('active');
-          navBackdrop.classList.remove('active');
-          document.body.classList.remove('menu-open');
-        });
-      });
-
-      // Active section highlighting
-      const sections = document.querySelectorAll('section');
-      const navItems = document.querySelectorAll('.nav-links a');
-
-      window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          const sectionHeight = section.clientHeight;
-          if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-          }
-        });
-
-        navItems.forEach(item => {
-          item.classList.remove('active');
-          if (item.getAttribute('href').slice(1) === current) {
-            item.classList.add('active');
-          }
-        });
-      });
-
-      // Form submission handling with validation
-      const contactForm = document.querySelector('.contact-form');
-      if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          
-          // Basic form validation
-          const name = contactForm.querySelector('#name').value;
-          const email = contactForm.querySelector('#email').value;
-          const message = contactForm.querySelector('#message').value;
-
-          if (!name || !email || !message) {
-            alert('Please fill in all fields');
-            return;
-          }
-
-          // Email validation
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(email)) {
-            alert('Please enter a valid email address');
-            return;
-          }
-
-          // Here you would typically send the form data to a server
-          alert('Thank you for your message! I will get back to you soon.');
-          contactForm.reset();
-        });
-      }
-
-      // Resume access functionality
-      const resumeForm = document.querySelector('.resume-form');
-      const resumeMessage = document.getElementById('resume-message');
-
-      if (resumeForm) {
-        resumeForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          const email = document.getElementById('resume-email').value;
-          
-          // Email validation
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(email)) {
-            resumeMessage.textContent = 'Please enter a valid email address';
-            resumeMessage.className = 'resume-message error';
-            return;
-          }
-
-          // Simulate sending verification email
-          resumeMessage.textContent = 'Verification email sent! Please check your inbox.';
-          resumeMessage.className = 'resume-message success';
-          resumeForm.reset();
-
-          // In a real implementation, you would:
-          // 1. Send the email to your backend
-          // 2. Generate a unique verification token
-          // 3. Send the verification email to the user
-          // 4. Store the token and email in your database
-          // 5. Create a verification endpoint that checks the token
-          // 6. Allow access to the resume if verification is successful
-        });
-      }
-    });
-  </script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/GLTFLoader.js"></script>
   <script src="script.js"></script>
