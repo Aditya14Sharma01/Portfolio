@@ -3,26 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio website of Aditya Sharma - Developer, Tech Enthusiast, and Robotics Engineer" />
-  <meta name="keywords" content="portfolio, developer, robotics, embedded systems, IoT, Aditya Sharma" />
+  <meta name="description" content="Portfolio website of Aditya Sharma - Developer, Tech Enthusiast, and Robotics Engineer. Explore my projects, skills, and get in touch." />
+  <meta name="keywords" content="portfolio, developer, robotics, embedded systems, IoT, Aditya Sharma, tech enthusiast, hardware, software, projects, skills, contact" />
   <meta name="author" content="Aditya Sharma" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <title>Aditya Sharma | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <script src="script.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Aditya Sharma",
+    "url": "https://yourwebsite.com",
+    "jobTitle": "Developer and Robotics Engineer",
+    "sameAs": [
+      "https://github.com/Aditya14Sharma01",
+      "https://www.linkedin.com/in/aditya1401sharma/",
+      "https://www.instagram.com/hack.erx14",
+      "https://www.youtube.com/@TeknoRobotics2"
+    ]
+  }
+  </script>
 </head>
 <body>
   <div id="robot-3d-container" style="position:fixed; bottom:20px; left:20px; width:300px; height:300px; z-index:2000; pointer-events:none;"></div>
   <header class="navbar">
     <div class="nav-container">
       <div class="logo">Aditya Sharma</div>
-      <div class="nav-links" id="navLinks">
+      <nav class="nav-links" id="navLinks">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#contact" class="contact-button">Contact Me Now</a>
-      </div>
+      </nav>
       <button id="menuToggle" class="menu-toggle">
         <i class="fas fa-bars"></i>
       </button>
@@ -50,7 +65,7 @@
       <h2>About Me</h2>
       <div class="about-container">
         <div class="about-image">
-          <img src="myphoto.jpg" alt="Aditya Sharma" class="profile-photo">
+          <img src="myphoto.jpg" alt="Aditya Sharma - Developer and Robotics Engineer" class="profile-photo">
           <div class="social-links-about">
             <a href="https://github.com/Aditya14Sharma01" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/aditya1401sharma/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -85,7 +100,7 @@
       <div class="projects-grid">
         <div class="project">
           <div class="project-image">
-            <img src="images-project/smart-car.jpg" alt="Smart Car Controller" loading="lazy">
+            <img src="images-project/smart-car.jpg" alt="Smart Car Controller - Wi-Fi-controlled robotic car" loading="lazy">
           </div>
           <h3>Smart Car Controller</h3>
           <p>A Wi-Fi-controlled robotic car using ESP32-CAM, with live camera feed and smartphone compatibility. Features real-time video streaming and obstacle detection.</p>
@@ -101,7 +116,7 @@
         </div>
         <div class="project">
           <div class="project-image">
-            <img src="images-project/maze-solver.jpg" alt="Maze Solver" loading="lazy">
+            <img src="images-project/maze-solver.jpg" alt="Maze Solver - PID-based intelligent robot" loading="lazy">
           </div>
           <h3>Maze Solver</h3>
           <p>PID-based intelligent robot for solving complex mazes using sensor array and IR obstacle detection. Achieves optimal path finding in dynamic environments.</p>
@@ -117,7 +132,7 @@
         </div>
         <div class="project">
           <div class="project-image">
-            <img src="images-project/gesture-robot.jpg" alt="Gesture Controlled Robot" loading="lazy">
+            <img src="images-project/gesture-robot.jpg" alt="Gesture Controlled Robot - Hand gesture control" loading="lazy">
           </div>
           <h3>Gesture Controlled Robot</h3>
           <p>Robot controlled through hand gestures using accelerometer and gyroscope sensors, with wireless communication and real-time response.</p>
@@ -131,7 +146,7 @@
         </div>
         <div class="project">
           <div class="project-image">
-            <img src="images-project/weather-station.jpg" alt="Weather Station" loading="lazy">
+            <img src="images-project/weather-station.jpg" alt="Weather Station - IoT-based weather monitoring system" loading="lazy">
           </div>
           <h3>Weather Station</h3>
           <p>IoT-based weather monitoring system with temperature, humidity, and pressure sensors, featuring a web dashboard for real-time data visualization.</p>
@@ -236,6 +251,9 @@
             <input type="email" id="email" name="email" placeholder="Your Email" required>
           </div>
           <div class="form-group">
+            <input type="text" id="phone" name="phone" placeholder="Your Phone Number" required>
+          </div>
+          <div class="form-group">
             <textarea id="message" name="message" placeholder="Your Message" required></textarea>
           </div>
           <button type="submit" class="submit-button">Send Message</button>
@@ -299,5 +317,11 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/loaders/GLTFLoader.js"></script>
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("pKGEFmRkQD0CU4VYs"); // Provided public key
+    })();
+  </script>
 </body>
 </html>

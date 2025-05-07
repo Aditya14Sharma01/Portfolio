@@ -79,3 +79,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+function sendEmail(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const phone = document.getElementById('phone').value;
+  const message = document.getElementById('message').value;
+
+  // Basic validation
+  if (!name || !email || !phone || !message) {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  // Send email using EmailJS
+  emailjs.send('service_k6cc7gp', 'template_ekpsph9', {
+    from_name: name,
+    from_email: email,
+    phone: phone,
+    message: message,
+  })
+  .then(function(response) {
+    console.log('SUCCESS!', response.status, response.text);
+    alert('Thank you for your message! We will get back to you soon.');
+  }, function(error) {
+    console.log('FAILED...', error);
+    alert('Failed to send the message. Please try again later.');
+  });
+}
