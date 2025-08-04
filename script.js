@@ -96,8 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Experience clouds (spheres)
     const cloudData = [
       { y: 3.5, angle: Math.PI / 3, color: 0x00ffae, labelId: 'exp-label-0', icon: '\uf0b1' }, // briefcase
-      { y: 1, angle: Math.PI, color: 0xffd700, labelId: 'exp-label-1', icon: '\uf51c' },      // chalkboard-teacher
-      { y: -5.5, angle: -Math.PI / 2, color: 0xb388ff, labelId: 'exp-label-2', icon: '\uf059' }  // question-circle
+      { y: 1, angle: Math.PI - 0.5, color: 0xffd700, labelId: 'exp-label-1', icon: '\uf51c' },      // chalkboard-teacher
+      { y: -6.5, angle: -Math.PI / 2, color: 0xb388ff, labelId: 'exp-label-2', icon: '\uf059' }  // question-circle
     ];
     const cloudMeshes = [];
     const cloudHelixAttach = [];
@@ -210,6 +210,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     animate();
   }
+
+  // Initialize timeline animation
+  initTimelineAnimation();
 });
 
 // Remove theme toggle functionality
@@ -260,4 +263,63 @@ function sendEmail(event) {
     console.log('FAILED...', error);
     alert('Failed to send the message. Please try again later.');
   });
+}
+
+// Animated Timeline
+function initTimelineAnimation() {
+  const timelineContainer = document.querySelector('.timeline-container');
+  const timelineCards = document.querySelectorAll('.timeline-card');
+  
+  console.log('Timeline elements found:', {
+    container: !!timelineContainer,
+    cards: timelineCards.length
+  });
+  
+  if (!timelineContainer || timelineCards.length === 0) return;
+  
+  // Scroll animation function
+  function animateOnScroll() {
+    const timelineCards = document.querySelectorAll('.timeline-card');
+    
+    // Animate timeline cards
+    timelineCards.forEach((card, index) => {
+      const rect = card.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      
+      if (isVisible) {
+        card.style.opacity = '1';
+        card.style.transform = 'translateX(0)';
+      }
+    });
+  }
+  
+  // Initialize timeline cards
+  timelineCards.forEach(card => {
+    card.style.opacity = '0';
+    if (card.classList.contains('left')) {
+      card.style.transform = 'translateX(-50px)';
+    } else if (card.classList.contains('right')) {
+      card.style.transform = 'translateX(50px)';
+    }
+  });
+  
+  // Add scroll event listener with throttling
+  let ticking = false;
+  function updateOnScroll() {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        animateOnScroll();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  
+  window.addEventListener('scroll', updateOnScroll, { passive: true });
+  
+  // Initial animation
+  animateOnScroll();
+  
+  // Also animate on window resize
+  window.addEventListener('resize', updateOnScroll, { passive: true });
 }
